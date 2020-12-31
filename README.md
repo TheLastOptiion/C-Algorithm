@@ -1,2 +1,2 @@
-# C-Algorithm
+# C++-Algorithm
 Important functions used in Competitive Programing 
