@@ -1,0 +1,90 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <cmath>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include <vector>
+#include <iterator>
+using namespace std;
+//#define ONLINE_JUDGE
+
+class Meet
+        {
+         public:
+            int start;
+            int ending;
+            int position;
+        };
+
+bool comparator( Meet m1,Meet m2)
+{
+  if(m1.ending < m2.ending) return true;
+  else if(m1.ending > m2.ending) return false;
+  else if(m1.position < m2.position ) return true;
+  return false;
+}
+
+int main()
+{
+	#ifndef ONLINE_JUDGE
+	  freopen("C:\\IO\\input.txt","r",stdin);
+	  freopen("C:\\IO\\output.txt","w",stdout);
+	  // **********************************************************   Open sublime text for input and output file.....HEHE  ****************************//
+	#endif
+	/* -----------------------Write your code here ----------------------*/
+      int t;
+      cin>>t;
+      while(t--)
+       {
+           int n;
+           cin>>n;
+           int S[n];int F[n];
+           for(int i=0;i<n;i++)
+             cin>>S[i];
+           for(int i=0;i<n;i++)
+             cin>>F[i];
+
+          Meet obj[n];
+          for(int i=0;i<n;i++)
+          {
+             obj[i].start = S[i];
+             obj[i].ending = F[i];
+             obj[i].position = i+1;
+          }
+          
+           // Sorting The Vector Array in O(nlogn) time
+          sort(obj,obj+n,comparator); // Use Of Comperator  
+         
+         // Initializing Vector and Base Cases..
+         vector <int> v1;
+         int limit = obj[0].ending;
+         v1.push_back(obj[0].position);
+         
+         // Condition to if Meeting Possible Or Not
+         for(int i=1;i<n;i++)
+          {
+            if(obj[i].start > limit)
+                {
+                   limit = obj[i].ending;
+                   v1.push_back(obj[i].position);
+                }
+          }
+          
+          // Print Vector
+          for (int i=0;i<v1.size();i++ )
+          {
+              cout<<v1[i]<<" ";
+          }
+
+          cout<<endl;
+
+       }
+
+  return 0;
+}
+
+
+
+// Overall Time Complexity is  O(nlongn) + 2*O(n) + O(n) => O(nlogn) 
+// 10^9 Log 10^9 => ( 9*10^9 ) ~ 10^9
