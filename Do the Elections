@@ -1,0 +1,35 @@
+Code Chef Problem Solution Hint For Long Chalange problem 01/01/2021:
+
+
+                  int A[N],B[M];
+                  sort(A,A+N);
+                  sort(B,B+M);
+                    int i=0,j=M-1;                   
+                    while( suma<=sumb && i<N && j>=0)
+                    {
+                        suma+=B[j]-A[i];
+                        sumb+=A[i]-B[j];
+                        i++;
+                        j--;
+                    }
+        
+     
+   /*  
+       A1 -> 1 2 3 4   
+       A2 -> 7 8 6 5 
+    
+      swap( A1 First and A2 Last)
+      sum of array          A1 = 10 and A2 = 26
+      After swap (1,5) sum  A1 = 14 and A2 = 22
+        
+      total Increment in sum of A1 is  (5-1) = 4  ,sumA1+=B[j]-A[i];
+      Total Decrement in sum of A2 is  (5-1) = 4  ,sumA2+=A[i]-B[j];
+        
+  */
+      
+      
+      
+      
+     
+             
+             
