@@ -1,0 +1,37 @@
+class Solution {
+public:
+    bool isPalindrome(int x) 
+    {
+        if(x<0)
+            return false;
+       int n,num,cnt=0;
+       n=x;
+       num=n;
+       while(n!=0)
+       {
+           int num = n%10;
+           n=n/10;
+           cnt++;
+       }
+        if(cnt==0)
+            cnt=1;
+       int a1[cnt],a2[cnt];
+       int c_c=0;
+       int c=cnt;
+       for(int i=0,j=c-1;i<cnt,j>=0;i++,j--)
+       {
+           a1[i] = num%10;
+           a2[j] = a1[i];
+             num = num/10;
+       }
+       for(int i=0;i<c;i++)
+       {
+           if( a1[i]==a2[i] )
+                 c_c++;
+       }
+       if(c_c == cnt)
+          return true;
+       else
+          return false;   
+    }
+};
