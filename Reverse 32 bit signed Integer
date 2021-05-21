@@ -1,0 +1,38 @@
+class Solution {
+public:
+    int reverse(int x) {
+        
+        int c=x;
+        int count = 0;
+            while ( c!= 0)
+            {
+                c = c / 10;
+                count++;
+            }
+        
+        long long int num=0,last,rem;
+        bool nzero = false;
+        while(count--)
+        {
+             last = x%10;
+             rem = x/10;
+              
+             if(last !=0)
+                 nzero = true;
+                 
+             if( last == 0 && nzero==false)
+               {
+                         x =rem;
+                        continue; 
+               }
+            
+               num = 10*num + last;
+                x = rem;              
+        }
+        if ( num >-2147483648 && num<= 2147483647)  // Exclude 32 bit integer limits and gives 0 as O/P.
+         return num;
+        else
+            return 0;
+        
+    }
+};
