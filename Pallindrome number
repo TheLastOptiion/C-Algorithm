@@ -35,3 +35,31 @@ public:
           return false;   
     }
 };
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    bool isPalindrome(int x) 
+    {
+       if(x<0)
+           return false;
+       
+        vector<int> v,b;
+        int n=x;
+        while( n!=0 )
+        {
+            int a=n%10;
+            n=n/10;
+            v.push_back(a);
+            b.push_back(a);
+        }
+        
+        reverse(b.begin(), b.end());
+        
+        if( b == v)
+            return true;
+        else
+            return false;
+    }
+};
