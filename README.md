@@ -6,3 +6,4 @@ Important functions used in Competitive Programing
 3. Election problem ( Algoritm )
 4. Two Sum problem of leetCode (Algorithm) O(n).
 5. reverse a 32-bit signed integer.
+6. Roman to Intiger converter;
