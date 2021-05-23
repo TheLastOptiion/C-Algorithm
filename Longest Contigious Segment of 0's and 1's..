@@ -1,0 +1,30 @@
+class Solution {
+public:
+    
+    int length( string s ,int n, char val )
+    {
+        int max=0,cnt=0;
+        for(int i=0;i<n;i++)
+        {
+            if( s[i]==val) cnt++;
+            if( cnt > max)  max=cnt; 
+            if( s[i]!=val) cnt=0;
+        }
+        return max;
+    }
+    
+    bool checkZeroOnes(string s) 
+    {    
+        int n=s.length();
+        char x='0',y='1';
+        int zero = length(s,n,x);
+        int one  = length(s,n,y);
+            
+        if( one>zero)
+            return true;
+        else
+            return false;
+     }
+        
+
+};
