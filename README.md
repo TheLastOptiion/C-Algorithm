@@ -7,4 +7,4 @@ Important functions used in Competitive Programing
 4. Two Sum problem of leetCode (Algorithm) O(n).
 5. reverse a 32-bit signed integer.
 6. Roman to Intiger converter;
-7. In Place Concept is Important
+7. In Place Concept is Important(Array) without taking help of secondry datastructure.
