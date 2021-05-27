@@ -1,0 +1,47 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s){
+        
+        
+        
+        bool strt = false;
+        
+        if( s.size() == 1 && s[0] ==' ')
+            return 0;
+            
+        int cnt=0;
+        
+        for( int i=s.size()-1 ; i>=0 ; i-- )
+        {
+            
+            if( s[i] == ' ' && i == s.size()-1 )
+            {
+                continue;
+            }
+            if( s[i]==' ' && i == 0 )
+                return cnt;
+            
+            if( s[i] == ' ' && strt==true )
+            {
+                return cnt;
+            }
+            
+            if( s[i] !=' ' && strt == false)
+            {
+                strt=true;
+                cnt++;
+                continue;
+            }
+            
+            if( s[i] !=' ' && strt == true)
+            {
+                cnt++;
+            }
+            
+            
+        }
+        
+        return cnt;
+        
+    }
+};
