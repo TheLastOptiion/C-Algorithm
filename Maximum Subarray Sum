@@ -1,0 +1,46 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) 
+    {
+        
+        long int p=0,q=0,zero=0;
+        int n = nums.size();
+        
+        if( n == 1)
+            return nums[0];
+        
+        
+        
+        
+        long int max=INT_MIN,sum=0;
+        
+        while( true )
+        {
+           if( nums.at(q) == 0)
+                zero++;
+           sum+=nums.at(q);
+            
+            if( max < sum)
+                 max = sum; 
+            
+           if( p == n-1 )
+                break;
+    
+           if( q == n-1 )
+               {
+                   p++;      
+                   q=p;
+                   q--; 
+                   sum=0;
+               }   
+            
+          if( q < n-1 )
+            q++;   
+          }
+          
+        if( max<0 && zero >=1)
+            return 0;
+        else
+          return max;  
+    }
+};
