@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool isPalindrome(string s) 
+    {
+        
+        int head=0,tail=s.length()-1;
+        
+       
+        while(head<tail)
+        {
+          if( !isalnum(s[head]) ) head++;
+          else if( !isalnum(s[tail]) ) tail--;
+          else{
+                   if( tolower(s[head++])!=tolower(s[tail--]))
+                   return false;
+               }
+        }
+        return true;
+        
+    }
+};
