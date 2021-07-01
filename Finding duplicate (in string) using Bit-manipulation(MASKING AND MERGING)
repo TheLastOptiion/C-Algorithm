@@ -1,0 +1,51 @@
+void find_duplicate_char(){
+          
+/* 
+________________
+   AND    | O/P
+----------|-----
+  1  &  0 |  0    
+  0  &  1 |  0
+  1  &  1 |  1
+  0  &  0 |  0
+________________    
+
+________________
+   OR     | O/P
+----------|-----
+  1  |  0 |  1    
+  0  |  1 |  1
+  1  |  1 |  1
+  0  |  0 |  0  
+________________
+
+________________
+   XOR    | O/P
+----------|-----
+  1  ^  0 |  1    
+  0  ^  1 |  1
+  1  ^  1 |  0
+  0  ^  0 |  0  
+________________
+
+*/
+
+        char ch[]="finding";
+         int H=0,x=0,flag=0;
+
+         for(int i=0;ch[i]!='\0';i++){
+             x=1;  //  int is 32 bit and 1st bit set to 1 except all are 0.
+             x = x<<ch[i]-97; // right shift ch[i]-97 times ans perform and Operation 
+             int a=x&H;
+             if( a > 0 )
+               { cout<<"Duplicate found: "<<ch[i]<<'\n'; flag=1;}
+             else
+                H = x | H;
+          }
+          if(flag==0)
+            cout<<"Sorry, No duplicate found.";
+
+
+
+
+}
