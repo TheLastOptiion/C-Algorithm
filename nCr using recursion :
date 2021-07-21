@@ -1,0 +1,25 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int ncr(int n,int r) {
+    if(n<r) return -1;
+	if(r==0 || n==r) return 1;
+	return ncr(n-1,r-1)+ncr(n-1,r);
+}
+
+int main() {
+    freopen("E:\\Comp-Prog\\output.txt","w",stdout);
+    cout<<ncr(5,3);
+	return 0;
+}
+/*
+Formula: 
+
+   n!
+-------
+r!(n-r)!
+
+*/
